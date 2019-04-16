@@ -1,0 +1,35 @@
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'} }) }}
+
+        {{ form_label(form.title, 'Titre') }}
+        {{ form_widget(form.title) }}
+        <span style="color: red">
+                {{ form_errors(form.title) }}
+        </span>
+
+        {{ form_label(form.content, 'Résumé') }}
+        {{ form_widget(form.content) }}
+        <span style="color: red">
+                {{ form_errors(form.content) }}
+        </span>
+<div class="image">
+        {% if form.image.vars.value.id is defined %}
+                <img src="{{ asset('upload/')~form.image.vars.value.name }}" alt="Upload Image" class="img-responsive img-upload">
+                <br>
+                <a href="#" class="btn btn-danger delete-img">Supprimer</a>
+        {% endif %}
+
+        <strong>{{ form_label(form.image) }}</strong>
+        {{ form_row(form.image) }}
+</div>
+
+
+        {{ form_label(form.authors) }}
+        {{ form_widget(form.authors) }}
+
+<div class="error-delete-keyword" style="display: none">
+        <div class="alert alert-danger" role="alert">
+                <span>Erreur lors de la suppression du mot clé</span>
+        </div>
+</div>
+
+        {{ form_widget(form.keywords) }}

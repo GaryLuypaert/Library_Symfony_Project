@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Bienvenue sur votre dashboard</h1>
+            {% if books|length == 0 %}
+                <p class="lead">Vous n'avez pas encore d'annonce</p>
+            {% else %}
+                <p class="lead">Vous avez {{ books|length }} annonce(s)</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Listes des bouquins :</h2>
+        {% if books|length == 0 %}
+            <p>Vous n'avez pas encore d'annonce</p>
+        {% else %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in books %}
+                <tr>
+                    <td><a href="{{ path('book_details', {id:book.id}) }}">{{ book.title }}</a></td>
+                    <td><a href="{{ path('edit_page', {id:book.id}) }}" class="btn btn-primary"><i class="fas fa-edit"></i> Modifier</a>
+                        <a href="{{ path('delete_page', {id:book.id}) }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        <a href="{{ path('add_page') }}" class="btn btn-success"><i class="fas fa-plus"></i> Ajouter un livre</a>
+
+    </div>
+
+{% endblock body %}

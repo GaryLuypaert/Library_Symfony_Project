@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">{{ book.title }}</h1>
+            <p class="lead">
+                {% if book.authors |length > 0 %}
+                    Ecrit par:
+                    {% for author in book.authors %}
+                        {{ author.name }}
+                    {% endfor %}
+                {% else %}
+                Détails du livre
+                {% endif %}
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                {% if book.image.name is defined %}
+                    <img src="{{ asset('upload/'~book.image.name) }}" alt="Couverture">
+                    {% else %}
+                    <p>Pas d'illustration</p>
+                {% endif %}
+            </div>
+            <div class="col-sm-8">
+                <h3>Résumé :</h3>
+                <p>{{ book.content }}</p>
+
+                <br>
+
+                <h4>Mots clés :</h4>
+                <p>
+                    {% for keyword in book.keywords %}
+                        {{ keyword.name }}{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                </p>
+                <a href="{{ path('home') }}" class="btn btn-primary">Retour</a>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock body %}

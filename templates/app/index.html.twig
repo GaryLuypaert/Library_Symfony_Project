@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Bienvenue sur le training Book</h1>
+            <p class="lead">Projet d'entrainement pour Symfony 4</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Listes des bouquins :</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Titre&nbsp;
+                        <a href="{{ path('order_asc') }}"><i class="fas fa-sort-alpha-down"></i></a>
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for book in books %}
+            <tr>
+                <td><a href="{{ path('book_details', {id:book.id}) }}">{{ book.title }}</a></td>
+                {% if is_granted("EDIT", book) %}
+                <td><a href="{{ path('edit_page', {id:book.id}) }}" class="btn btn-primary"><i class="fas fa-edit"></i> Modifier</a>
+                    <a href="{{ path('delete_page', {id:book.id}) }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Supprimer</a>
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock body %}

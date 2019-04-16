@@ -1,0 +1,13 @@
+App\Entity\Authors:
+  rowling:
+    name: J.K.Rowling
+  sapkowski:
+    name: Andrzej Sapkowski
+  tolkien:
+    name: Tolkien
+  isaacson:
+    name: Walter Isaacson
+  king:
+    name: Stephen King
+  meyer:
+    name: Stephenie Meyer

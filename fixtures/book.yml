@@ -1,0 +1,13 @@
+App\Entity\Book:
+  book_3:
+    title: Shining
+    content: Quand on propose à Jack Torrance, ancien professeur et ancien alcoolique, un poste de gardien pour l'hiver à l'hôtel Overlook dans les montagnes du Colorado, il croit tenir là une chance de se racheter aux yeux de sa famille. Il s'y installe avec Wendy, sa femme, et leur fils Danny, en espérant profiter de cette occasion pour écrire la pièce de théâtre qui le révélera au monde.Mais les démons de l'hôtel trouvent en Jack une proie presque trop facile pour poursuivre leur œuvre de mal, et il faudra le courage et le sixième sens étrange de son fils pour sauver in extremis ce qui pourra l'être. Car Danny possède ce don de lumière de même que l'ancien cuisinier de l'hôtel, Dick Hallorann, et la conjugaison des deux fera reculer les forces du mal. Pendant un certain temps...
+    authors: ['@king']
+  book_4:
+    title: The Witcher L'épée de la Providence
+    content: Geralt de Riv n'en a pas fini avec sa vie errante de tueur de monstres. Fidèle aux règles de la corporation maudite des sorceleurs, Geralt assume sa mission sans faillir dans un monde hostile et corrompu qui ne laisse aucune place à l'espoir. Mais la rencontre avec la petite Ciri, l'Enfant élue, va donner un sens nouveau à l'existence de ce héros solitaire. Geralt cessera-t-il enfin de fuir devant la mort pour affronter la providence et percer à jour son véritable destin ?
+    authors: ['@sapkowski']
+  book_5:
+    title: Harry Potter et la Coupe de Feu
+    content: Après un horrible été chez les Dursley, Harry Potter entre en quatrième année au collège de Poudlard. A quatorze ans , il voudrait simplement être un jeune sorcier comme les autres, retrouver ses amis Ron et Hermione, assister avec eux à la Coupe du Monde de Quidditch, apprendre de nouveaux sortilèges et essayer des potions inconnues. Une grande nouvelle l'attend cependant à son arrivée ; la tenue à Poudlard d'un tournoi de magie entre les plus célèbres écoles de sorcellerie. Déjà les spectaculaires délégations étrangères font leur entrée... Harry se réjouit. Trop vite. Il va se trouver plongé au cœur des évènements les plus dramatiques qu'il ait jamais eu à affronter.
+    authors: ['@rowling']
